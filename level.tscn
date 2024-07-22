@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://dfc7pvayby4j5"]
+
+[ext_resource type="Script" path="res://CHIP-8.gd" id="1_i6jpb"]
+[ext_resource type="Script" path="res://CentralProccessingUnit.gd" id="2_1mye2"]
+[ext_resource type="Script" path="res://Memory.gd" id="2_1uoao"]
+[ext_resource type="Script" path="res://PictureProccessingUnit.gd" id="2_eu6ja"]
+[ext_resource type="Script" path="res://IOHandler.gd" id="2_ptovx"]
+
+[node name="CHIP-8" type="Node2D"]
+script = ExtResource("1_i6jpb")
+
+[node name="IOHandler" type="Node2D" parent="."]
+script = ExtResource("2_ptovx")
+
+[node name="Memory" type="Node2D" parent="."]
+script = ExtResource("2_1uoao")
+
+[node name="CentralProccessingUnit" type="Node2D" parent="."]
+script = ExtResource("2_1mye2")
+mclock_speed = 20.0
+
+[node name="PictureProccessingUnit" type="Node2D" parent="."]
+script = ExtResource("2_eu6ja")
+
+[node name="ScreenOutput" type="Sprite2D" parent="PictureProccessingUnit"]
+offset = Vector2(32, 16)
